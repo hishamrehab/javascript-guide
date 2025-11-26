@@ -14,6 +14,8 @@
 // console.dir( "allLis", allLis);
 
 // const listItemElements =  document.querySelectorAll("li");
+
+
 const h1 = document.getElementById("main-title");
 
 h1.textContent = "Some new title!";
@@ -34,3 +36,11 @@ h1.style.backgroundColor ="balck";
 for(const listItemEl of listItemElements) {
     console.dir(listItemEl)
 } 
+
+
+// Traversing Child Nodes
+
+// document.querySelector(".list-item");
+const ul = document.querySelector("ul");
+
+ul.querySelector
