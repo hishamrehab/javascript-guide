@@ -44,3 +44,9 @@ for(const listItemEl of listItemElements) {
 const ul = document.querySelector("ul");
 
 ul.querySelector
+
+// Usimng parentNode & ParentElement
+
+const liFirst = document.querySelector("li");
+liFirst.closest("body")
+
