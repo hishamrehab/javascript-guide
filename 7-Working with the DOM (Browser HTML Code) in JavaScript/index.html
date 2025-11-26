@@ -6,17 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DOM Interaction</title>
   <script src="app.js" defer></script> 
+  <style>
+
+    .red-bg {
+      background-color : red;
+      color: white;
+    }
+
+    .visible {
+      dispaly: block;
+
+    }
+
+  .invisible {
+    display: none
+  }
+
+  </style>
 </head>
 <body>
   <header>
     <h1 class="main-title">Dive into the DOM!</h1>
   </header>
-  <ul>
+  <section class="red-bg visible">
+ <ul>
     <li class="list-item">Item 1 </li>
     <li class="list-item">Item 2 </li>
     <li class="list-item">Item 3 </li>
   </ul>
-
+  </section>
+ 
+ <button>Toggle Visibility</button>
   <input typ="text" value="default text"/>
 
 </body>
