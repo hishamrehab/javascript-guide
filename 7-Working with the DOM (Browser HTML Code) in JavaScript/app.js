@@ -88,8 +88,13 @@
 
 
 const list = document.querySelector("ul");
-list.innerHTML = list.innerHTML + '<li>Item 4</li>'
+// list.innerHTML = list.innerHTML + '<li>Item 4</li>'
+
+// dispatchEvent.innerHTML = dispatchEvent.innerHTML + '<p>Something went wrong!</p>'
 
 
-dispatchEvent.innerHTML = dispatchEvent.innerHTML + '<p>Something went wrong!</p>'
+const newLi = document.createElement("li");
 
+newLi.textContent = "Item 4";
+list.appendChild(newLi);
+newLi.style.backgroundColor ="blue";
