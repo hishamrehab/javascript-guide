@@ -69,20 +69,27 @@
 
 
 // Styling DOM Element
-const section = document.querySelector("section");
-const button = document.querySelector("button");
+ const section = document.querySelector("section");
+ const button = document.querySelector("button");
 
 // section.style.backgroundColor = "blue"
-section.className = "red-bg";
+ section.className = "red-bg";
 
-button.addEventListener("click" , () => {
+// button.addEventListener("click" , () => {
   // if(section.className === "red-bg visible") {
   //   section.className = "red-bg invisible"
   // }else {
   //   section.className = "red-bg visible"
   // }
 
-  section.classList.toggle("visible");
-  section.classList.toggle("invisible");
-});
+//   section.classList.toggle("visible");
+//   section.classList.toggle("invisible");
+// });
+
+
+const list = document.querySelector("ul");
+list.innerHTML = list.innerHTML + '<li>Item 4</li>'
+
+
+dispatchEvent.innerHTML = dispatchEvent.innerHTML + '<p>Something went wrong!</p>'
 
