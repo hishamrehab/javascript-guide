@@ -87,14 +87,42 @@
 // });
 
 
-const list = document.querySelector("ul");
+// const list = document.querySelector("ul");
 // list.innerHTML = list.innerHTML + '<li>Item 4</li>'
 
 // dispatchEvent.innerHTML = dispatchEvent.innerHTML + '<p>Something went wrong!</p>'
 
 
+// const newLi = document.createElement("li");
+
+// newLi.textContent = "Item 4";
+// list.appendChild(newLi);
+// newLi.style.backgroundColor ="blue";
+
+// list.append("Some Text");
+
+
+const list = document.querySelector("ul");
+const newLi  = document.createElement("li");
+
+newLi.textContent = "Item 4"
+list.prepend(newLi);
+
+list.lastElementChild.before(newLi);
+
+document.createElement.before(newLi);
+document.createElement.after(newLi);
+list.firstElementChild.replaceWith(newLi);
+lust.append(newLi);
+
+
+const secondLi = list.children[1];
+
 const newLi = document.createElement("li");
 
-newLi.textContent = "Item 4";
-list.appendChild(newLi);
-newLi.style.backgroundColor ="blue";
+newLi.textContent = "item 4";
+
+list.insertAdjacentElement("beforebegin", newLi);
+list.insertAdjacentElement("afterbegin", newLi);
+list.insertAdjacentElement("beforeend", newLi);
+list.insertAdjacentElement("afterend", newLi);
