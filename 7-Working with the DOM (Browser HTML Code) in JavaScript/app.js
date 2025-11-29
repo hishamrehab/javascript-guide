@@ -126,3 +126,8 @@ list.insertAdjacentElement("beforebegin", newLi);
 list.insertAdjacentElement("afterbegin", newLi);
 list.insertAdjacentElement("beforeend", newLi);
 list.insertAdjacentElement("afterend", newLi);
+
+// Cloning Dom Nodes
+const newLi2  = newLi.cloneNode(true);
+
+list.append(newLi ,newLi2);
