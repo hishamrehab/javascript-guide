@@ -20,3 +20,19 @@ const arrayListItems = Array.from(listItems);
 console.log(moreNumbers);
 
 
+
+
+const hobbies = ["Cookies" , "Sports"];
+const personalData = [30 , "Max" , {moreDetail : []}]
+const analytics = [[ 1,1.6 ] , [-5.4 , 2.1]  , [2.3 , 3.4]];
+
+
+
+for(const data of analytics) {
+    for(const dataPoinsts of data) {
+        console.log(dataPoinsts);
+    }
+}
+
+
+console.log(personalData[2]);
