@@ -65,11 +65,14 @@ console.log(numbers);
 
 
 const testResults = [ 1 , 5 , 1.5 , 10.99 , -5 , 10];
-const storedRes = testResults.slice(0, 2);
-const storedResults = testResults.slice(2);
+// const storedRes = testResults.slice(0, 2);
+// const storedResults = testResults.slice(2);
+const storedResults = testResults.concat([1 , 2 , 3 ]);
 
 
 testResults.push(5.61);
 
 
 console.log(storedRes , testResults);
+
+
