@@ -1,6 +1,6 @@
-const numbers = [1 , 2 , 3];
+// const numbers = [1 , 2 , 3];
 
-console.log(numbers);
+// console.log(numbers);
 
 // const moreNumbers = new Array(1 , 2 , 3); //[]
 // console.log(moreNumbers);
@@ -94,17 +94,31 @@ console.log(numbers);
 // console.log(manuel , personData);
 
 
-const prices = [10.99 , 5.99 ,3.99 , 6.59  ];
-const tax = 0.19;
-const taxAdjustedPrices = [];
+// const prices = [10.99 , 5.99 ,3.99 , 6.59  ];
+// const tax = 0.19;
+// const taxAdjustedPrices = [];
 
 // for(const price of prices) {
 //     taxAdjustedPrices.push(price * (1+tax));
 // }
  
-prices.forEach((price , idx) => {
+// prices.forEach((price , idx) => {
+//     const priceObj = {index: idx , textAdjectPrice : price *(1+ tax)};
+//     taxAdjustedPrices.push(priceObj);
+// });
+
+// console.log(taxAdjustedPrices);
+
+
+
+const prices = [10.99 , 5.99 ,3.99 , 6.59  ];
+const tax = 0.19;
+
+
+const textAdjectPrices = prices.map((price , idx) => {
     const priceObj = {index: idx , textAdjectPrice : price *(1+ tax)};
-    taxAdjustedPrices.push(priceObj);
+ return priceObj;
 });
 
-console.log(taxAdjustedPrices);
+console.log(prices , textAdjectPrices);
+
