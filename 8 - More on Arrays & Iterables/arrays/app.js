@@ -63,16 +63,20 @@ console.log(numbers);
 
 // console.log(hobbies); 
 
-
-const testResults = [ 1 , 5 , 1.5 , 10.99 , -5 , 10];
+const testResults = [ 1 , 5 , 1.5 , 10.99 , 1.5, -5 , 10];
 // const storedRes = testResults.slice(0, 2);
 // const storedResults = testResults.slice(2);
 const storedResults = testResults.concat([1 , 2 , 3 ]);
 
-
 testResults.push(5.61);
+console.log(storedResults , testResults);
 
+ console.log(testResults.indexOf(1.5));
+ console.log(testResults.lastIndexOf(1.5));
 
-console.log(storedRes , testResults);
+const personData = [
+    {name : "Max"},
+    {name : "Manual"},
+]
 
-
+console.log(personData.indexOf({ name: "Manual"}));
