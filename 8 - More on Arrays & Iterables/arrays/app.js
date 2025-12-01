@@ -75,9 +75,8 @@ console.log(storedResults , testResults);
  console.log(testResults.lastIndexOf(1.5));
 
  console.log(testResults.includes(10.99));
+ console.log(testResults.includes(10.99) !== -1);
 
-
- console.log(testResults.includes(10.9));
 
 const personData = [
     {name : "Max"},
