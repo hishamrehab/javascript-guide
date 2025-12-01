@@ -172,18 +172,28 @@
     // console.log( Math.min(...prices));
 
 
-const persons = [
-    {name: "Max" , age: 30} , 
-    {name : "Manuel" , age :31 }];
+// const persons = [
+//     {name: "Max" , age: 30} , 
+//     {name : "Manuel" , age :31 }];
 
-const copiedPersons = [...persons
-    .map((person) =>({ 
-    name: person.name, 
-    age: person.age,
-}
-))];
+// const copiedPersons = [...persons
+//     .map((person) =>({ 
+//     name: person.name, 
+//     age: person.age,
+// }
+// ))];
 
-    persons.push({name : "Anna" , age: 29});
-    persons[0].age = 31;
+//     persons.push({name : "Anna" , age: 29});
+//     persons[0].age = 31;
 
-console.log(persons , copiedPersons);
+// console.log(persons , copiedPersons);
+
+ 
+const nameData = ["Max" , "Schwarz" , "Mr", 30];
+// const firstName = nameData[0];
+// const latsName = nameData[1];
+
+
+const [ firstName , lastName ,  ...otherInformation] = nameData;
+console.log(firstName , lastName);
+
