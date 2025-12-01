@@ -63,32 +63,48 @@ console.log(numbers);
 
 // console.log(hobbies); 
 
-const testResults = [ 1 , 5 , 1.5 , 10.99 , 1.5, -5 , 10];
+// const testResults = [ 1 , 5 , 1.5 , 10.99 , 1.5, -5 , 10];
 // const storedRes = testResults.slice(0, 2);
 // const storedResults = testResults.slice(2);
-const storedResults = testResults.concat([1 , 2 , 3 ]);
+// const storedResults = testResults.concat([1 , 2 , 3 ]);
 
-testResults.push(5.61);
-console.log(storedResults , testResults);
+// testResults.push(5.61);
+// console.log(storedResults , testResults);
 
- console.log(testResults.indexOf(1.5));
- console.log(testResults.lastIndexOf(1.5));
+//  console.log(testResults.indexOf(1.5));
+//  console.log(testResults.lastIndexOf(1.5));
 
- console.log(testResults.includes(10.99));
- console.log(testResults.includes(10.99) !== -1);
-
-
-const personData = [
-    {name : "Max"},
-    {name : "Manuael"},
-]
-
-console.log(personData.indexOf({ name: "Manual"}));
+//  console.log(testResults.includes(10.99));
+//  console.log(testResults.includes(10.99) !== -1);
 
 
-const manuel = personData.find((person , idx , persons) => {
-    return person.name === "Manuael";
+// const personData = [
+//     {name : "Max"},
+//     {name : "Manuael"},
+// ]
+
+// console.log(personData.indexOf({ name: "Manual"}));
+
+
+// const manuel = personData.find((person , idx , persons) => {
+//     return person.name === "Manuael";
+// });
+
+// manuel.name = "Maximilian";
+// console.log(manuel , personData);
+
+
+const prices = [10.99 , 5.99 ,3.99 , 6.59  ];
+const tax = 0.19;
+const taxAdjustedPrices = [];
+
+// for(const price of prices) {
+//     taxAdjustedPrices.push(price * (1+tax));
+// }
+ 
+prices.forEach((price , idx) => {
+    const priceObj = {index: idx , textAdjectPrice : price *(1+ tax)};
+    taxAdjustedPrices.push(priceObj);
 });
 
-manuel.name = "Maximilian";
-console.log(manuel , personData);
+console.log(taxAdjustedPrices);
