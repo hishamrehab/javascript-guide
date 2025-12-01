@@ -136,13 +136,17 @@ const sotedPrices = prices.sort((a , b) => {
  console.log(sotedPrices);
 
 
- const filterdArray = prices.filter((price) => {
-    return price > 6;
- });
+ const filterdArray = prices.filter((price) => price > 6);
 
  console.log(filterdArray);
 
 
+    // let sum = 0;
+    // prices.forEach((price) => {
+    //     sum += price
+    // })
+
+    // console.log("sum" , sum);
 
 
-
+    const sum = prices.reduce((prevValue , curValue) => prevValue + curValue, 0);
