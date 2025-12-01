@@ -76,7 +76,15 @@ console.log(storedResults , testResults);
 
 const personData = [
     {name : "Max"},
-    {name : "Manual"},
+    {name : "Manuael"},
 ]
 
 console.log(personData.indexOf({ name: "Manual"}));
+
+
+const manuel = personData.find((person , idx , persons) => {
+    return person.name === "Manuael";
+});
+
+manuel.name = "Maximilian";
+console.log(manuel , personData);
