@@ -122,3 +122,27 @@ const textAdjectPrices = prices.map((price , idx) => {
 
 console.log(prices , textAdjectPrices);
 
+
+const sotedPrices = prices.sort((a , b) => {
+    if(a > b) {
+       return -1;
+    }else if(a === b) {
+        return 0;
+      }else {
+        return 1;
+      }
+} );
+
+ console.log(sotedPrices);
+
+
+ const filterdArray = prices.filter((price) => {
+    return price > 6;
+ });
+
+ console.log(filterdArray);
+
+
+
+
+
