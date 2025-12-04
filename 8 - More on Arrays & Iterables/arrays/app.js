@@ -176,10 +176,11 @@
 //     {name: "Max" , age: 30} , 
 //     {name : "Manuel" , age :31 }];
 
-// const copiedPersons = [...persons
+// const copiedPersons = [
+// ...persons
 //     .map((person) =>({ 
 //     name: person.name, 
-//     age: person.age,
+//     age: person.age
 // }
 // ))];
 
@@ -189,11 +190,13 @@
 // console.log(persons , copiedPersons);
 
  
-const nameData = ["Max" , "Schwarz" , "Mr", 30];
+// const nameData = ["Max" , "Schwarz" , "Mr", 30];
 // const firstName = nameData[0];
 // const latsName = nameData[1];
 
 
-const [ firstName , lastName ,  ...otherInformation] = nameData;
-console.log(firstName , lastName);
+// const [ firstName , lastName ,  ...otherInformation] = nameData;
+// console.log(firstName , lastName , otherInformation);
+
+
 
