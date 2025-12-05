@@ -42,4 +42,4 @@ const persons = new WeakSet();
 
 persons.add(person);
 
-console.log(persons);
+console.log(persons);asdddddddddddddddddddddddd
