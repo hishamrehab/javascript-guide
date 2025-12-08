@@ -32,7 +32,6 @@ const renderMovies = (filter = "") => {
     movieEl.textContent = text;
     movieList.append(movieEl);
     }); 
-
 }
 
 
