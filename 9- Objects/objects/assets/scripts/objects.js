@@ -21,9 +21,14 @@ const renderMovies = (filter = "") => {
 
     fiteredMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
+    
+    // if("info" in movie) {
+     
+    // }
+
     const { info , ... otherProps } = movie;
-    console.log("otherProps", otherProps);
-    let text = info.title + ' - ' ;
+    const { title: movieTitle } = info;
+    let text = movieTitle + ' - ' ;
     for (const key in info) {
         if(key !== 'title') {
             text += `${key}: ${info[key]}`
