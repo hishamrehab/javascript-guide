@@ -3,7 +3,6 @@ const searchBtn = document.getElementById("search-btn");
 
 const movies = [];
 
-
 const renderMovies = (filter = "") => {
     const movieList = document.getElementById("movie-list");
       
@@ -19,55 +18,56 @@ const renderMovies = (filter = "") => {
   ? movies 
   :  movies.filter(movie => movie.info.title.includes(filter));
      
-    
- 
+
     fiteredMovies.forEach((movie) => {
     const movieEl = document.createElement("li");
-    let text = movie.info.title + '- ' ;
-    for (const key in movie.info) {
+    const { info , ... otherProps } = movie;
+    console.log("otherProps", otherProps);
+    let text = info.title + ' - ' ;
+    for (const key in info) {
         if(key !== 'title') {
-            text += `${key}: ${movie.info[key]}`
+            text += `${key}: ${info[key]}`
         } 
     }
+
     movieEl.textContent = text;
     movieList.append(movieEl);
     }); 
 }
 
 
-const addMovieHandler = () => {
+    const addMovieHandler = () => {
    const title = document.getElementById("title").value;
    const extraValue = document.getElementById("extra-value").value;
    const extraName = document.getElementById("extra-name").value;
 
     if(title.trim() === "" ||
-    extraName.trim() === "" ||
-    extraValue.trim() === ""
+       extraName.trim() === "" ||
+       extraValue.trim() === ""
     ) {
     return;
     }
     
 
- const newMovie = {
-   info: {
-     title,
-     [extraName]: extraValue,
-   },
-   id: Math.random().toString(),
- }
+    const newMovie = {
+    info: {
+        title,
+        [extraName]: extraValue,
+    },
+    id: Math.random().toString()
+    }
 
- movies.push(newMovie);
-    renderMovies();
-};
-
-
-
-const searchMovieHandler = () => {
-    const filterTerm = document.getElementById("filter-title").value;
-    renderMovies(filterTerm);
-
-}
+    movies.push(newMovie);
+        renderMovies();
+    };
 
 
-addMovieBtn.addEventListener("click" , addMovieHandler);
-searchBtn.addEventListener("click" , searchMovieHandler);
+
+    const searchMovieHandler = () => {
+        const filterTerm = document.getElementById("filter-title").value;
+        renderMovies(filterTerm);
+    }
+
+
+    addMovieBtn.addEventListener("click" , addMovieHandler);
+    searchBtn.addEventListener("click" , searchMovieHandler);
