@@ -131,3 +131,5 @@ list.insertAdjacentElement("afterend", newLi);
 const newLi2  = newLi.cloneNode(true);
 
 list.append(newLi ,newLi2);
+
+
