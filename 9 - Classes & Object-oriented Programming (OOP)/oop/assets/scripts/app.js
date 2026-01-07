@@ -11,16 +11,29 @@ class Product {
         this.price = price;
     }
  } 
+ 
 
- class ShoppingCart {
+  class ShoppingCart {
      items = [];
-  
-      addProduct(product) {
-        this.items.push(product);
-        this.totalOutput = `<h2>Total Amount \$${1} </h2>`;
+
+      set cartItems(value) {
+        this.items = value;
+        this.totalOutput.innerHTML = `<h2>Total Amount \$${this.totalAmount.toFixed(2)} </h2>`;
       }
 
-     render() {
+     get totalAmount() {
+        const sum = this.items.reduce(
+            (prevValue , curItem) =>   prevValue + curItem.price, 0);
+        return sum;
+     }
+  
+    addProduct(product) {
+      const updateItems = [...this.items];
+        updateItems.push(product);
+        this.cartItems = updateItems;
+      }
+
+    render() {
     const cartEl = document.createElement('section');
     cartEl.innerHTML = `
     <h2>Total Amount \$${0} </h2>
@@ -31,21 +44,22 @@ class Product {
     return cartEl;
      }
  }
+
     class ProductItem {
         constructor(product) {
-            this.product = product;
+        this.product = product;
         }
 
         addToCart() {
-     ShoppingCart.addProduct(this.product);
+        App.addProductToCart(this.product);
         }
 
      render() {
      const prodEl = document.createElement('li');
-        prodEl.className = 'product-item';
+         prodEl.className = 'product-item';
          prodEl.innerHTML = `
-        <div>
-        <img src="${this.product.imageUrl}" alt="${this.product.title}" />
+          <div>
+           <img src="${this.product.imageUrl}" alt="${this.product.title}" />
            <div className="product-item__content">
            <h2>${this.product.title}</h2>
            <h3>\${this.product.price}</h3>
@@ -55,7 +69,7 @@ class Product {
          </div>
         `;
         const addCartButton = prodEl.querySelector('button');
-         addCartButton.addEventListener("click" , this.addToCart.bind(this))
+        addCartButton.addEventListener("click" , this.addToCart.bind(this))
         return prodEl;
      }
 }
@@ -83,29 +97,45 @@ class ProductList {
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
-        prodList.appendChild(prodEl);
+      prodList.appendChild(prodEl);
     }
     return prodList;
     }
 }
 
 
+
+
 class Shop {
     render() {
-            const renderHook = document.getElementById('app');
-
-        const cart = new ShoppingCart();
-      const catEl =  cart.render();
-        const productList = new ProductList();
+      const renderHook = document.getElementById('app');
+      this.cart = new ShoppingCart();
+      const catEl =  this.cart.render();
+      const productList = new ProductList();
       const prodListEl =  productList.render();
       renderHook.append(catEl);
-      renderHook.append(prodListEl);
+      renderHook.append(prodListEl); 
     }
 }
 
 
-const shop = new Shop();
-shop.render();
+    class App {
+        static cart;
+
+        static init() {
+        const shop  = new Shop();
+        shop.render();
+        this.cart = shop.cart;
+        }
+
+        static addProductToCart(product) {
+            this.cart.addProduct(product);
+        }
+    }
+
+App.init();
+
+
 
 
 
