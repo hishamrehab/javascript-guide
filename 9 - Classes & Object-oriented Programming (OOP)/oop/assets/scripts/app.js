@@ -125,16 +125,16 @@ class Product {
 
 
 class ProductList extends Component {
-    products = [];
+       #products = [];
   
-
-    constructor(renderHookId) {
-      super(renderHookId);
-      this.fetchProducts();
-    }
+        constructor(renderHookId) {
+        super(renderHookId);
+        this.render();
+        this.fetchProducts();
+        }
 
     fetchProducts() {
-    this.products= [
+    this.#products= [
         new Product(
                 "A Pillow"  ,
                 "data:image/jpeg;base64,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" ,  
@@ -152,7 +152,7 @@ class ProductList extends Component {
     }
 
   renderProducts(){
-  for (const prod of this.products) {
+  for (const prod of this.#products) {
      new ProductItem(prod , "prod-list");
     }
   }
@@ -161,12 +161,11 @@ class ProductList extends Component {
     this.createRootElement('ul' , "product-list" , [
         new ElementAttribute("id" , "prod-list")
     ]);
-    if(this.products && this.products.length > 0){
+    if(this.#products && this.#products.length > 0){
         this.renderProducts();
     }
 }
 }
-
 
     class Shop  {
         constructor() {
@@ -175,7 +174,8 @@ class ProductList extends Component {
 
         render() {
         this.cart = new ShoppingCart("app");
-        new ProductList("app");
+        const list = new ProductList("app");
+
         }
     }
 
